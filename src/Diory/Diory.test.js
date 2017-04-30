@@ -4,8 +4,10 @@ import { shallow } from 'enzyme'
 import Diory from './Diory'
 
 describe('<Diory />', () => {
-  it('renders', () => {
-    const wrapper = shallow(<Diory />)
-    expect(wrapper.html()).toEqual('<div>Hello, I am a Diory!</div>')
+  let component
+
+  it('renders text from props', () => {
+    component = shallow(<Diory text='some-text' />)
+    expect(component.text()).toEqual('some-text')
   })
 })

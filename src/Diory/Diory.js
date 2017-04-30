@@ -1,7 +1,18 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-export default function Diory () {
-  return (
-    <div>Hello, I am a Diory!</div>
-  )
+const Diory = ({ text }) => (
+  <div>
+    <div>{ text }</div>
+  </div>
+)
+
+Diory.propTypes = {
+  text: PropTypes.string
 }
+
+Diory.defaultProps = {
+  text: ''
+}
+
+export default Diory
