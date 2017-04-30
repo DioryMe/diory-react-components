@@ -1,7 +1,7 @@
 /* eslint-env jest */
 import React from 'react'
 import { shallow } from 'enzyme'
-import Diory from './index'
+import Diory from './Diory'
 
 describe('<Diory />', () => {
   it('renders', () => {

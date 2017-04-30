@@ -1,7 +1,1 @@
-import React from 'react'
-
-export default function Diory () {
-  return (
-    <div>Hello, I am a Diory!</div>
-  )
-}
+export { Diory as default, Diory } from './Diory'
