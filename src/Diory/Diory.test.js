@@ -8,6 +8,6 @@ describe('<Diory />', () => {
 
   it('renders text from props', () => {
     component = shallow(<Diory text='some-text' />)
-    expect(component.text()).toEqual('some-text')
+    expect(component.find('DioryText').prop('text')).toEqual('some-text')
   })
 })
