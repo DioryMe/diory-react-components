@@ -4,7 +4,7 @@
   "main": "lib/index.js",
   "scripts": {
     "build": "babel src --out-dir lib --ignore test.js",
-    "lint": "eslint src",
+    "lint": "eslint src --fix",
     "test": "npm run lint && npm run build && jest --env=jsdom",
     "example": "browserify -t [ babelify ] example/app.js -o example/bundle.js",
     "clean": "rm -rf node_modules"
