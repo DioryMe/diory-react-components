@@ -10,4 +10,9 @@ describe('<Diory />', () => {
     component = shallow(<Diory text='some-text' />)
     expect(component.find('DioryText').prop('text')).toEqual('some-text')
   })
+
+  it('renders image from props', () => {
+    component = shallow(<Diory image='some-image' />)
+    expect(component.find('DioryImage').prop('image')).toEqual('some-image')
+  })
 })
