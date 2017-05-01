@@ -14,7 +14,7 @@ const defaultStyle = {
 
 const getBackgroundImage = image => ({ backgroundImage: 'url(' + image + ')' })
 
-export const DioryImage = ({ image, style }) => (
+export const DioryImage = ({ image, style }) => !image ? null : (
   <div style={{ ...defaultStyle, ...getBackgroundImage(image), ...style }} />
 )
 
