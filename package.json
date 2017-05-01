@@ -49,7 +49,12 @@
       "eslint-config-standard",
       "eslint-config-standard-react"
     ],
-    "parser": "babel-eslint"
+    "parser": "babel-eslint",
+    "rules": {
+      "react/jsx-curly-spacing": [2, "always", {"spacing": {
+        "objectLiterals": "never"
+      }}]
+    }
   },
   "description": "Creates React components from Diograph data",
   "keywords": [

@@ -7,7 +7,7 @@ const defaultStyles = {
 }
 
 export const DioryText = ({ text }) => (
-  <div style={ { ...defaultStyles } }>{ text }</div>
+  <div style={{ ...defaultStyles }}>{ text }</div>
 )
 
 DioryText.propTypes = {
