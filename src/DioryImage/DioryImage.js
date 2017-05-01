@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const defaultStyles = {
+const defaultStyle = {
   position: 'absolute',
   top: 0,
   right: 0,
@@ -14,12 +14,13 @@ const defaultStyles = {
 
 const getBackgroundImage = image => ({ backgroundImage: 'url(' + image + ')' })
 
-export const DioryImage = ({ image }) => (
-  <div style={ { ...defaultStyles, ...getBackgroundImage(image) } } />
+export const DioryImage = ({ image, style }) => (
+  <div style={{ ...defaultStyle, ...getBackgroundImage(image), ...style }} />
 )
 
 DioryImage.propTypes = {
-  image: PropTypes.string
+  image: PropTypes.string,
+  style: PropTypes.object
 }
 
 DioryImage.defaultProps = {
