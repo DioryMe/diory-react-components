@@ -1,3 +1,3 @@
 export { Diory as default, Diory } from './Diory'
-export { default as DioryText } from './DioryText'
-export { default as DioryImage } from './DioryImage'
+export { DioryText } from './DioryText'
+export { DioryImage } from './DioryImage'
