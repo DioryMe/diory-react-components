@@ -6,7 +6,7 @@ const defaultStyles = {
   margin: '1em'
 }
 
-export const DioryText = ({ text, style }) => (
+export const DioryText = ({ text, style }) => !text ? null : (
   <div style={{ ...defaultStyles, ...style }}>{ text }</div>
 )
 

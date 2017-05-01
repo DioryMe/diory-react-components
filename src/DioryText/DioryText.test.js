@@ -6,18 +6,24 @@ import { DioryText } from './DioryText'
 describe('<DioryText />', () => {
   let component
 
-  it('renders text from props', () => {
-    component = shallow(<DioryText text='some-text' />)
-    expect(component.text()).toEqual('some-text')
+  describe('given the text is received as props', () => {
+    it('renders the text', () => {
+      component = shallow(<DioryText text='some-text' />)
+      expect(component.text()).toEqual('some-text')
+    })
+
+    it('sets style from props', () => {
+      component = shallow(
+        <DioryText text='some-text' style={{ color: 'some-color' }} />
+      )
+      expect(component.prop('style').color).toEqual('some-color')
+    })
   })
 
-  it('sets style from props', () => {
-    component = shallow(
-      <DioryText
-        text='some-text'
-        style={{ color: 'some-color' }}
-      />
-    )
-    expect(component.prop('style').color).toEqual('some-color')
+  describe('given the text is not received as props', () => {
+    it('does not render the component', () => {
+      component = shallow(<DioryText />)
+      expect(component.html()).toBeNull()
+    })
   })
 })
