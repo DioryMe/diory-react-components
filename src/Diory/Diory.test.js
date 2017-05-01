@@ -20,14 +20,15 @@ describe('<Diory />', () => {
     expect(component.find('DioryText').prop('text')).toEqual('some-text')
   })
 
-  it('sets text style from props', () => {
+  it('sets styles to text from props', () => {
+    const styles = { some: 'styles' }
     component = shallow(
       <Diory
         text='some-text'
-        styles={{ text: { some: 'style' } }}
+        styles={ styles }
       />
     )
-    expect(component.find('DioryText').prop('style')).toEqual({ some: 'style' })
+    expect(component.find('DioryText').prop('styles')).toEqual(styles)
   })
 
   it('renders image from props', () => {
@@ -35,13 +36,14 @@ describe('<Diory />', () => {
     expect(component.find('DioryImage').prop('image')).toEqual('some-image')
   })
 
-  it('sets image style from props', () => {
+  it('sets styles to image from props', () => {
+    const styles = { some: 'styles' }
     component = shallow(
       <Diory
         image='some-image'
-        styles={{ image: { some: 'style' } }}
+        styles={ styles }
       />
     )
-    expect(component.find('DioryImage').prop('style')).toEqual({ some: 'style' })
+    expect(component.find('DioryImage').prop('styles')).toEqual(styles)
   })
 })

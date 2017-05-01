@@ -5,8 +5,8 @@ import { DioryImage } from '../DioryImage'
 
 const Diory = ({ image, text, styles }) => (
   <div style={ styles.diory }>
-    <DioryImage image={ image } style={ styles.image } />
-    <DioryText text={ text } style={ styles.text } />
+    <DioryImage image={ image } styles={ styles } />
+    <DioryText text={ text } styles={ styles } />
   </div>
 )
 

@@ -14,7 +14,7 @@ describe('<DioryText />', () => {
 
     it('sets style from props', () => {
       component = shallow(
-        <DioryText text='some-text' style={{ color: 'some-color' }} />
+        <DioryText text='some-text' styles={{ text: { color: 'some-color' } }} />
       )
       expect(component.prop('style').color).toEqual('some-color')
     })
