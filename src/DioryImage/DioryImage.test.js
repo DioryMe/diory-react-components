@@ -11,7 +11,7 @@ describe('<DioryImage />', () => {
     expect(component.prop('style').backgroundImage).toEqual('url(some-image)')
   })
 
-  it('sets styles from props', () => {
+  it('sets style from props', () => {
     component = shallow(
       <DioryImage
         image='some-image'

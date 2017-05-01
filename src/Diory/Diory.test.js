@@ -11,12 +11,22 @@ describe('<Diory />', () => {
     expect(component.find('DioryText').prop('text')).toEqual('some-text')
   })
 
+  it('sets text style from props', () => {
+    component = shallow(
+      <Diory
+        text='some-text'
+        styles={{ text: { some: 'style' } }}
+      />
+    )
+    expect(component.find('DioryText').prop('style')).toEqual({ some: 'style' })
+  })
+
   it('renders image from props', () => {
     component = shallow(<Diory image='some-image' />)
     expect(component.find('DioryImage').prop('image')).toEqual('some-image')
   })
 
-  it('sets style for image from props', () => {
+  it('sets image style from props', () => {
     component = shallow(
       <Diory
         image='some-image'
