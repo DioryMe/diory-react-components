@@ -6,6 +6,15 @@ import Diory from './Diory'
 describe('<Diory />', () => {
   let component
 
+  it('sets diory style from props', () => {
+    component = shallow(
+      <Diory
+        styles={{ diory: { some: 'style' } }}
+      />
+    )
+    expect(component.prop('style')).toEqual({ some: 'style' })
+  })
+
   it('renders text from props', () => {
     component = shallow(<Diory text='some-text' />)
     expect(component.find('DioryText').prop('text')).toEqual('some-text')
