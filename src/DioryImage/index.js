@@ -1,0 +1,1 @@
+export { DioryImage } from './DioryImage'
