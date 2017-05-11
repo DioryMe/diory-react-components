@@ -6,14 +6,9 @@ const diorys = {
     text: 'Hello, I am a diory. Take me home!',
     image: 'https://gravatar.com/avatar/ff80f8f9bc52f1b79e468a41f2239001',
     styles: {
-      diory: {
-        width: '20em',
-        height: '20em',
-        backgroundColor: 'green',
-        margin: '2em auto'
-      },
-      image: { opacity: 0.5, filter: 'blur(5px)' },
-      text: { fontSize: '2em', fontFamily: 'sans-serif', color: 'white' }
+      diory: { width: '20em', height: '20em', backgroundColor: 'green', margin: '5em auto' },
+      image: { opacity: 0.6, filter: 'blur(5px)' },
+      text: { fontSize: '2em', fontFamily: 'sans-serif', color: 'white', textAlign: 'center', textShadow: '1px 1px green' }
     }
   },
   dioryText: {
@@ -31,8 +26,8 @@ const diorys = {
 const DioryExample = ({}) => (
   <div>
     <DioryImage { ...diorys.diory } />
+    <DioryText { ...diorys.diory } />
     <Diory { ...diorys.diory } />
-    <DioryText { ...diorys.dioryText } />
   </div>
 )
 
