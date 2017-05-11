@@ -1,21 +1,19 @@
 import React from 'react'
-import Diory, { DioryText } from '../lib'
+import { Diory, DioryImage, DioryText } from '../lib'
 
 const diorys = {
   diory: {
-    text: 'Hello, I am a diory',
-    image: 'http://www.mulierchile.com/images/landscape/landscape-4.jpg',
+    text: 'Hello, I am a diory. Take me home!',
+    image: 'https://gravatar.com/avatar/ff80f8f9bc52f1b79e468a41f2239001',
     styles: {
       diory: {
-        position: 'relative',
-        width: '40em',
+        width: '20em',
         height: '20em',
-        backgroundColor: 'black',
-        overflow: 'hidden',
-        margin: '2em'
+        backgroundColor: 'green',
+        margin: '2em auto'
       },
-      image: { filter: 'blur(5px)' },
-      text: { fontSize: '3em', fontFamily: 'sans-serif', color: 'white' }
+      image: { opacity: 0.5, filter: 'blur(5px)' },
+      text: { fontSize: '2em', fontFamily: 'sans-serif', color: 'white' }
     }
   },
   dioryText: {
@@ -32,6 +30,7 @@ const diorys = {
 
 const DioryExample = ({}) => (
   <div>
+    <DioryImage { ...diorys.diory } />
     <Diory { ...diorys.diory } />
     <DioryText { ...diorys.dioryText } />
   </div>
