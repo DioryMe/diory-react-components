@@ -12,7 +12,7 @@ describe('<Diory />', () => {
         styles={{ diory: { some: 'style' } }}
       />
     )
-    expect(component.prop('style')).toEqual({ some: 'style' })
+    expect(component.prop('style').some).toEqual('style')
   })
 
   it('renders text from props', () => {

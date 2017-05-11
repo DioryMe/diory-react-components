@@ -3,8 +3,12 @@ import PropTypes from 'prop-types'
 import { DioryText } from '../DioryText'
 import { DioryImage } from '../DioryImage'
 
+const defaultStyle = {
+  position: 'relative'
+}
+
 const Diory = ({ image, text, styles }) => (
-  <div style={ styles.diory }>
+  <div style={{ ...defaultStyle, ...styles.diory }}>
     <DioryImage image={ image } styles={ styles } />
     <DioryText text={ text } styles={ styles } />
   </div>
