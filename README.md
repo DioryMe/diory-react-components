@@ -19,7 +19,7 @@ import { DioryText } from 'diory-react-components'
 
 ```
 
-##Usage
+## Usage
 
 ```js
 const diory = {
@@ -47,7 +47,7 @@ const diory = {
 
 ```
 
-![alt text](https://raw.githubusercontent.com/opohjola/dioryme/master/example/diory-example.png)
+![alt text](https://github.com/DioryMe/diory-react-components/blob/master/example/diory-example.png)
 
 
 ## Running tests
