@@ -39,6 +39,7 @@ const diory = {
   <Diory { ...diory } />
 </div>
 ```
+#### Diorys
 
 ![alt text](https://github.com/DioryMe/diory-react-components/blob/master/example/diory-example.png)
 
