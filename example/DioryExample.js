@@ -13,8 +13,9 @@ const diory = {
 
 const dioryGrid = {
   text: 'This is a grid:',
+  image: 'https://gravatar.com/avatar/ff80f8f9bc52f1b79e468a41f2239001',
   styles: {
-    text: { fontSize: '2em', fontFamily: 'sans-serif' }
+    text: { fontSize: '2em', fontFamily: 'sans-serif', color: 'white' }
   },
   diorys: {
     1: diory,
