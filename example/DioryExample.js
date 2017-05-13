@@ -12,9 +12,25 @@ const diory = {
 }
 
 const dioryGrid = {
-  text: 'This is a diory grid:',
+  text: 'This is a grid:',
   styles: {
     text: { fontSize: '2em', fontFamily: 'sans-serif' }
+  },
+  diorys: {
+    1: diory,
+    2: diory,
+    3: diory,
+    4: diory
+  }
+}
+
+const dioryFlexItem = { ...diory }
+dioryFlexItem.styles.diory.flex = '1 0 20em'
+
+const dioryFlexGrid = {
+  image: 'https://gravatar.com/avatar/ff80f8f9bc52f1b79e468a41f2239001',
+  styles: {
+    diory: { display: 'flex', flexWrap: 'wrap' }
   },
   diorys: {
     1: diory,
@@ -28,6 +44,8 @@ const DioryExample = ({}) => (
   <div>
     <Diory { ...diory } />
     <DioryGrid { ...dioryGrid } />
+    <Diory text="This is a flex grid:" styles={{ text: { fontSize: '2em', fontFamily: 'sans-serif' }}} />
+    <DioryGrid { ...dioryFlexGrid } />
   </div>
 )
 
