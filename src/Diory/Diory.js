@@ -7,7 +7,7 @@ const defaultStyle = {
   position: 'relative'
 }
 
-const Diory = ({ image, text, styles }) => (
+const Diory = ({ image, text, styles = {} }) => (
   <div style={{ ...defaultStyle, ...styles.diory }}>
     <DioryImage image={ image } styles={ styles } />
     <DioryText text={ text } styles={ styles } />
@@ -22,10 +22,6 @@ Diory.propTypes = {
     image: PropTypes.object,
     text: PropTypes.object
   })
-}
-
-Diory.defaultProps = {
-  styles: {}
 }
 
 export default Diory
