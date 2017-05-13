@@ -11,6 +11,11 @@ describe('<Diory />', () => {
     expect(component.prop('style').some).toEqual('style')
   })
 
+  it('renders its children', () => {
+    component = shallow(<Diory><div className='children'>some children</div></Diory>)
+    expect(component.find('.children').html()).toEqual('<div class="children">some children</div>')
+  })
+
   describe('a <Image /> within', () => {
     let diory
     let imageComponent
