@@ -7,43 +7,43 @@ describe('<Diory />', () => {
   let component
 
   it('sets diory style from props', () => {
-    component = shallow(
-      <Diory
-        styles={{ diory: { some: 'style' } }}
-      />
-    )
+    component = shallow(<Diory styles={{ diory: { some: 'style' } }} />)
     expect(component.prop('style').some).toEqual('style')
   })
 
-  it('renders text from props', () => {
-    component = shallow(<Diory text='some-text' />)
-    expect(component.find('DioryText').prop('text')).toEqual('some-text')
+  describe('a <Image /> within', () => {
+    let diory
+    let imageComponent
+    beforeEach(() => {
+      diory = { image: 'some-image', styles: { image: { some: 'image-style' } } }
+      component = shallow(<Diory { ...diory } />)
+      imageComponent = component.find('Image')
+    })
+
+    it('sets image from diory', () => {
+      expect(imageComponent.prop('image')).toEqual(diory.image)
+    })
+
+    it('sets image styles from diory', () => {
+      expect(imageComponent.prop('style')).toEqual(diory.styles.image)
+    })
   })
 
-  it('sets styles to text from props', () => {
-    const styles = { some: 'styles' }
-    component = shallow(
-      <Diory
-        text='some-text'
-        styles={ styles }
-      />
-    )
-    expect(component.find('DioryText').prop('styles')).toEqual(styles)
-  })
+  describe('a <Text /> within', () => {
+    let diory
+    let textComponent
+    beforeEach(() => {
+      diory = { text: 'some-text', styles: { text: { some: 'text-style' } } }
+      component = shallow(<Diory { ...diory } />)
+      textComponent = component.find('Text')
+    })
 
-  it('renders image from props', () => {
-    component = shallow(<Diory image='some-image' />)
-    expect(component.find('DioryImage').prop('image')).toEqual('some-image')
-  })
+    it('sets text from diory', () => {
+      expect(textComponent.prop('text')).toEqual(diory.text)
+    })
 
-  it('sets styles to image from props', () => {
-    const styles = { some: 'styles' }
-    component = shallow(
-      <Diory
-        image='some-image'
-        styles={ styles }
-      />
-    )
-    expect(component.find('DioryImage').prop('styles')).toEqual(styles)
+    it('sets text styles from diory', () => {
+      expect(textComponent.prop('style')).toEqual(diory.styles.text)
+    })
   })
 })
