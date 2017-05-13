@@ -1,20 +1,20 @@
 /* eslint-env jest */
 import React from 'react'
 import { shallow } from 'enzyme'
-import { DioryImage } from './DioryImage'
+import { Image } from './Image'
 
-describe('<DioryImage />', () => {
+describe('<Image />', () => {
   let component
 
   describe('given a image as prop', () => {
     it('renders the image as a background-image', () => {
-      component = shallow(<DioryImage image='some-image' />)
+      component = shallow(<Image image='some-image' />)
       expect(component.prop('style').backgroundImage).toEqual('url(some-image)')
     })
 
     describe('given a style as prop ', () => {
       it('sets style to the image', () => {
-        component = shallow(<DioryImage image='some-image' style={{ backgroundImage: 'some-background-image' }} />)
+        component = shallow(<Image image='some-image' style={{ backgroundImage: 'some-background-image' }} />)
         expect(component.prop('style').backgroundImage).toEqual('some-background-image')
       })
     })
@@ -22,7 +22,7 @@ describe('<DioryImage />', () => {
 
   describe('given no image as props', () => {
     it('does not render the component', () => {
-      component = shallow(<DioryImage />)
+      component = shallow(<Image />)
       expect(component.html()).toBeNull()
     })
   })

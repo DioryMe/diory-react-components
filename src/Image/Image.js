@@ -14,11 +14,11 @@ const defaultStyle = {
 
 const getBackgroundImage = image => ({ backgroundImage: 'url(' + image + ')' })
 
-export const DioryImage = ({ image, style = {} }) => !image ? null : (
+export const Image = ({ image, style = {} }) => !image ? null : (
   <div style={{ ...defaultStyle, ...getBackgroundImage(image), ...style }} />
 )
 
-DioryImage.propTypes = {
+Image.propTypes = {
   image: PropTypes.string,
   style: PropTypes.object
 }
