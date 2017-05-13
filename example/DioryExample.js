@@ -20,7 +20,9 @@ const dioryGrid = {
     1: diory,
     2: diory,
     3: diory,
-    4: diory
+    4: diory,
+    5: diory,
+    6: diory
   }
 }
 

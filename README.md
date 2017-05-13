@@ -13,7 +13,7 @@ $ npm i diory-react-components --save
 ## Import
 
 ```js
-import { Diory, DioryImage, DioryText } from 'diory-react-components'
+import { Diory, DioryGrid } from 'diory-react-components'
 
 ```
 
@@ -31,12 +31,26 @@ const diory = {
   }
 }
 ```
+```js
+const dioryGrid = {
+  text: 'This is a grid:',
+  styles: {
+    text: { fontSize: '2em', fontFamily: 'sans-serif' }
+  },
+  diorys: {
+    1: diory,
+    2: diory,
+    3: diory,
+    4: diory
+  }
+}
+```
+
 #### Diory components
 ```jsx
 <div>
-  <DioryImage { ...diory } />
-  <DioryText { ...diory } />
   <Diory { ...diory } />
+  <DioryGrid { ...dioryGrid } />
 </div>
 ```
 #### Diorys
