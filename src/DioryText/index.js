@@ -1,1 +1,0 @@
-export { DioryText } from './DioryText'
