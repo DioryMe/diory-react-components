@@ -58,7 +58,7 @@ const dioryGrid = {
 ```
 #### Diorys
 
-![alt text](https://github.com/DioryMe/diory-react-components/blob/master/example/diory-example.png)
+![alt text](https://raw.githubusercontent.com/DioryMe/diory-react-components/master/example/diory-example.png)
 
 
 ## Running tests
