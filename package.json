@@ -56,12 +56,14 @@
       }}]
     }
   },
-  "description": "Creates React components from Diograph data",
+  "description": "Create React components from Diograph data",
+  "homepage": "https://github.com/DioryMe/diory-react-components",
   "keywords": [
     "diory",
     "react",
-    "javascript"
+    "javascript",
+    "diograph"
   ],
-  "author": "Olli-Pekka Pohjola",
-  "license": "ISC"
+  "author": "Olli-Pekka Pohjola <oopee@iki.fi>",
+  "license": "MIT"
 }
