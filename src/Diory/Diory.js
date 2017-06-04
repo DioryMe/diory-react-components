@@ -7,13 +7,15 @@ const defaultStyle = {
   position: 'relative'
 }
 
-const Diory = ({ image, text, styles = {}, children }) => (
-  <div style={{ ...defaultStyle, ...styles.diory }}>
+const Diory = ({ image, text, styles = {}, onClick, children, ...other }) => (
+  <div style={{ ...defaultStyle, ...styles.diory }} onClick={ handleOnClick({ text, image, styles, ...other }, onClick) }>
     <Image image={ image } style={ styles.image } />
     <Text text={ text } style={ styles.text } />
     { children }
   </div>
 )
+
+const handleOnClick = (diory, onClick) => event => onClick && onClick({ ...diory, data: { event } })
 
 Diory.propTypes = {
   text: PropTypes.string,
@@ -23,6 +25,7 @@ Diory.propTypes = {
     image: PropTypes.object,
     text: PropTypes.object
   }),
+  onClick: PropTypes.func,
   children: PropTypes.node
 }
 

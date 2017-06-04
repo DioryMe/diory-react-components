@@ -51,4 +51,40 @@ describe('<Diory />', () => {
       expect(textComponent.prop('style')).toEqual(diory.styles.text)
     })
   })
+
+  describe('given does not contain onClick callback', () => {
+    describe('when clicked', () => {
+      beforeEach(() => {
+        component = shallow(<Diory />)
+        component.simulate('click', 'some-event')
+      })
+
+      it('renders component', () => {
+        expect(component).toExists
+      })
+    })
+  })
+
+  describe('given contains onClick callback', () => {
+    let dioryMock
+    let onClickMock
+    beforeEach(() => {
+      dioryMock = { imageUrl: 'some-image-url', styles: {}, text: 'some-text' }
+      onClickMock = jest.fn()
+      component = shallow(<Diory { ...dioryMock } onClick={ onClickMock } />)
+    })
+
+    describe('when not clicked', () => {
+      it('does not call onClick', () => {
+        expect(onClickMock).not.toHaveBeenCalled()
+      })
+    })
+
+    describe('when clicked', () => {
+      it('calls onClick', () => {
+        component.simulate('click', 'some-event')
+        expect(onClickMock).toHaveBeenCalledWith({ ...dioryMock, data: { event: 'some-event' } })
+      })
+    })
+  })
 })
