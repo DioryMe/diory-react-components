@@ -43,12 +43,21 @@ const dioryFlexGrid = {
   }
 }
 
+const dioryButton = {
+  text: 'This is a button that returns the clicked diory!',
+  styles: {
+    diory: { backgroundColor: 'green', width: '100%', cursor: 'pointer' },
+    text: { fontSize: '2em', fontFamily: 'sans-serif', color: 'white', textAlign: 'center' }
+  }
+}
+
 const DioryExample = ({}) => (
   <div>
     <Diory { ...diory } />
     <DioryGrid { ...dioryGrid } />
     <Diory text="This is a flex grid:" styles={{ text: { fontSize: '2em', fontFamily: 'sans-serif' }}} />
     <DioryGrid { ...dioryFlexGrid } />
+    <Diory { ...dioryButton } onClick={ console.log }/>
   </div>
 )
 
