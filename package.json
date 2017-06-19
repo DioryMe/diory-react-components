@@ -1,6 +1,6 @@
 {
   "name": "diory-react-components",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "main": "lib/index.js",
   "scripts": {
     "build": "babel src --out-dir lib --ignore test.js",
