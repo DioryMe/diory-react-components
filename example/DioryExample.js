@@ -54,7 +54,11 @@ const dioryButton = {
 const DioryExample = ({}) => (
   <div>
     <Diory { ...diory } />
-    <DioryGrid { ...dioryGrid } />
+    <DioryGrid
+      { ...dioryGrid }
+      onParentClick={ diory => console.log('parent:', diory) }
+      onChildClick={ diory => { diory.data.event.stopPropagation(); console.log('child:', diory); } }
+    />
     <Diory text="This is a flex grid:" styles={{ text: { fontSize: '2em', fontFamily: 'sans-serif' }}} />
     <DioryGrid { ...dioryFlexGrid } />
     <Diory { ...dioryButton } onClick={ console.log }/>
