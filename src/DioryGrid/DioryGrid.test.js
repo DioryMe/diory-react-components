@@ -4,8 +4,12 @@ import { shallow } from 'enzyme'
 import DioryGrid from './DioryGrid'
 
 describe('<DioryGrid />', () => {
-  let component
+  let getComponent
   let diory
+
+  beforeEach(() => {
+    getComponent = () => shallow(<DioryGrid { ...diory } />)
+  })
 
   describe('given a diory without connected diorys', () => {
     beforeEach(() => {
@@ -13,13 +17,11 @@ describe('<DioryGrid />', () => {
     })
 
     it('passes diory props to the container Diory', () => {
-      component = shallow(<DioryGrid { ...diory } />)
-      expect(component.find('Diory').first().prop('some')).toEqual('diory-prop')
+      expect(getComponent().find('Diory').first().prop('some')).toEqual('diory-prop')
     })
 
     it('does not pass children as props to the container Diory', () => {
-      component = shallow(<DioryGrid { ...diory } />)
-      expect(component.find('Diory').first().prop('children').length).toEqual(0)
+      expect(getComponent().find('Diory').first().prop('children').length).toEqual(0)
     })
   })
 
@@ -31,31 +33,31 @@ describe('<DioryGrid />', () => {
     })
 
     it('renders Diorys as children', () => {
-      component = shallow(<DioryGrid { ...diory } />)
-      expect(component.children().find('Diory').length).toEqual(2)
+      expect(getComponent().children().find('Diory').length).toEqual(2)
     })
 
     it('passes diorys props to Diorys', () => {
-      component = shallow(<DioryGrid { ...diory } />)
-      expect(component.children().find('Diory').first().prop('some')).toEqual('first-diory-prop')
+      expect(getComponent().children().find('Diory').first().prop('some')).toEqual('first-diory-prop')
     })
 
     describe('when the connected diorys is an empty object', () => {
       it('does not render diorys as children', () => {
         diory = {}
-        component = shallow(<DioryGrid { ...diory } />)
-        expect(component.children().find('Diory').length).toEqual(0)
+        expect(getComponent().children().find('Diory').length).toEqual(0)
       })
     })
   })
 
   describe('given a onParentClick callback', () => {
     let onParentClickMock
+    beforeEach(() => {
+      onParentClickMock = jest.fn()
+      getComponent = () => shallow(<DioryGrid onParentClick={ onParentClickMock } />)
+    })
+
     describe('when the parent diory is clicked', () => {
       beforeEach(() => {
-        onParentClickMock = jest.fn()
-        component = shallow(<DioryGrid onParentClick={ onParentClickMock } />)
-        component.simulate('click', { some: 'parent-diory' })
+        getComponent().simulate('click', { some: 'parent-diory' })
       })
 
       it('calls onParentClick callback', () => {
@@ -66,18 +68,21 @@ describe('<DioryGrid />', () => {
 
   describe('given a onChildClick callback', () => {
     let onChildClickMock
+    beforeEach(() => {
+      diory = {
+        diorys: { 'some-first-key': { some: 'first-child-diory' }, 'other-key': { some: 'second-child-diory' } }
+      }
+      onChildClickMock = jest.fn()
+      getComponent = () => shallow(<DioryGrid { ...diory } onChildClick={ onChildClickMock } />)
+    })
+
     describe('when the parent diory is clicked', () => {
       beforeEach(() => {
-        diory = {
-          diorys: { 1: { some: 'first-child-diory' }, 2: { some: 'second-child-diory' } }
-        }
-        onChildClickMock = jest.fn()
-        component = shallow(<DioryGrid { ...diory } onChildClick={ onChildClickMock } />)
-        component.find({ some: 'first-child-diory' }).simulate('click', { some: 'callback' })
+        getComponent().find({ some: 'first-child-diory' }).simulate('click', { some: 'callback' })
       })
 
       it('calls onParentClick callback', () => {
-        expect(onChildClickMock).toHaveBeenCalledWith({ some: 'callback' })
+        expect(onChildClickMock).toHaveBeenCalledWith({ key: 'some-first-key', some: 'callback' })
       })
     })
   })

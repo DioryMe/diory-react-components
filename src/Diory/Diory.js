@@ -8,20 +8,21 @@ const defaultStyle = {
 }
 
 const Diory = ({ image, text, styles = {}, onClick, children, ...other }) => (
-  <div style={{ ...defaultStyle, ...styles.diory }} onClick={ handleOnClick({ text, image, styles, ...other }, onClick) }>
+  <div
+    style={{ ...defaultStyle, ...styles.diory }}
+    onClick={ event => onClick && onClick({ diory: { image, text, styles, ...other }, event }) }
+  >
     <Image image={ image } style={ styles.image } />
     <Text text={ text } style={ styles.text } />
     { children }
   </div>
 )
 
-const handleOnClick = (diory, onClick) => event => onClick && onClick({ ...diory, data: { event } })
-
 Diory.propTypes = {
   text: PropTypes.string,
   image: PropTypes.string,
   styles: PropTypes.shape({
-    diory: PropTypes.diory,
+    diory: PropTypes.object,
     image: PropTypes.object,
     text: PropTypes.object
   }),

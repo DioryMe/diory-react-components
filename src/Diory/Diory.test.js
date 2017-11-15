@@ -52,19 +52,6 @@ describe('<Diory />', () => {
     })
   })
 
-  describe('given does not contain onClick callback', () => {
-    describe('when clicked', () => {
-      beforeEach(() => {
-        component = shallow(<Diory />)
-        component.simulate('click', 'some-event')
-      })
-
-      it('renders component', () => {
-        expect(component).toExists
-      })
-    })
-  })
-
   describe('given contains onClick callback', () => {
     let dioryMock
     let onClickMock
@@ -83,7 +70,7 @@ describe('<Diory />', () => {
     describe('when clicked', () => {
       it('calls onClick', () => {
         component.simulate('click', 'some-event')
-        expect(onClickMock).toHaveBeenCalledWith({ ...dioryMock, data: { event: 'some-event' } })
+        expect(onClickMock).toHaveBeenCalledWith({ diory: dioryMock, event: 'some-event' })
       })
     })
   })
