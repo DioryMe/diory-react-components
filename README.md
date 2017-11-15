@@ -1,6 +1,6 @@
 # diory-react-components
 
-> Create Diory React components from Diograph data
+> Create React components from Diograph data
 
 ## Install
 
@@ -33,18 +33,26 @@ const diory = {
 ```
 ```js
 const dioryGrid = {
-  text: 'This is a grid:',
+  text: 'This is a grid',
   image: 'https://gravatar.com/avatar/ff80f8f9bc52f1b79e468a41f2239001',
   styles: {
     text: { fontSize: '2em', fontFamily: 'sans-serif', color: 'white' }
   },
   diorys: {
-    1: diory,
-    2: diory,
-    3: diory,
-    4: diory,
-    5: diory,
-    6: diory
+    someKey: {
+      text: 'This is a diory'
+    },
+    otherKey: {
+      text: 'This is a red diory',
+      styles: {
+        diory: {
+          backgroundColor: 'red'
+        },
+        text: {
+          color: 'white'
+        }
+      }
+    }
   }
 }
 ```
@@ -52,11 +60,17 @@ const dioryGrid = {
 #### Diory components
 ```jsx
 <div>
-  <Diory { ...diory } />
-  <DioryGrid { ...dioryGrid } />
+  <Diory 
+    { ...diory }
+    onClick={ ({ diory, event}) => doSomething(key,diory) }
+  />
+  <DioryGrid
+    { ...dioryGrid }
+    onGridClick={ ({ diory, event }) => doSomething() }
+    onDioryClick={ ({ key, diory, event }) => doSomethingElse() }
+  />
 </div>
 ```
-#### Diorys
 
 ![alt text](https://raw.githubusercontent.com/DioryMe/diory-react-components/master/example/diory-example.png)
 
@@ -69,21 +83,20 @@ Install dev dependencies:
 $ npm i -d && npm test
 ```
 
-## Contributing
+## Changes
 
-Pull requests and stars are always welcome. For bugs and feature requests, [please create an issue](#please create an issue)
+ - 1.2.0 (15.11.2017)
+    - DioryGrid click callback names and props changed to onDioryClick({ key, diory, event }) and onGridClick({ diory, event )
+
 
 ## Author
 
-**Olli-Pekka Pohjola**
-
-* [github/](https://github.com/)
-* [twitter/](http://twitter.com/)
+[**Olli-Pekka Pohjola**](mailto:oopee@iki.fi)
 
 ## License
 
 Copyright © 2017 [Olli-Pekka Pohjola](#Olli-Pekka Pohjola)
-Licensed under the ISC license.
+Licensed under the MIT license.
 
 ***
 
