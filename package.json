@@ -6,7 +6,7 @@
     "build": "babel src --out-dir lib --ignore test.js",
     "lint": "eslint src --fix",
     "test": "npm run lint && npm run build && jest --env=jsdom --watch",
-    "example": "browserify -t [ babelify ] example/app.js -o example/bundle.js",
+    "example": "npm run lint && npm run build && browserify -t [ babelify ] example/app.js -o example/bundle.js",
     "clean": "rm -rf node_modules"
   },
   "dependencies": {
@@ -51,9 +51,19 @@
     ],
     "parser": "babel-eslint",
     "rules": {
-      "react/jsx-curly-spacing": [2, "always", {"spacing": {
-        "objectLiterals": "never"
-      }}]
+      "react/jsx-curly-spacing": [
+        2,
+        "always",
+        {
+          "spacing": {
+            "objectLiterals": "never"
+          }
+        }
+      ],
+      "operator-linebreak": [
+        "error",
+        "after"
+      ]
     }
   },
   "description": "Create React components from Diograph data",
