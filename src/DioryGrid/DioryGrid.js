@@ -2,16 +2,16 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Diory } from '../Diory'
 
-const DioryGrid = ({ diorys = {}, onParentClick, onChildClick, ...diory }) => (
+const DioryGrid = ({ diorys = {}, onGridClick, onDioryClick, ...diory }) => (
   <Diory
     { ...diory }
-    onClick={ onParentClick }
+    onClick={ onGridClick }
   >
     { Object.entries(diorys).map(([key, diory]) => (
       <Diory
         { ...diory }
         key={ key }
-        onClick={ props => onChildClick({ key, ...props }) }
+        onClick={ props => onDioryClick({ key, ...props }) }
       />
     ))}
   </Diory>
@@ -19,8 +19,8 @@ const DioryGrid = ({ diorys = {}, onParentClick, onChildClick, ...diory }) => (
 
 DioryGrid.propTypes = {
   diorys: PropTypes.object,
-  onParentClick: PropTypes.func,
-  onChildClick: PropTypes.func
+  onGridClick: PropTypes.func,
+  onDioryClick: PropTypes.func
 }
 
 export default DioryGrid

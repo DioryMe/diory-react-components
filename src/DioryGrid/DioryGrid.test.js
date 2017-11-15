@@ -48,11 +48,11 @@ describe('<DioryGrid />', () => {
     })
   })
 
-  describe('given a onParentClick callback', () => {
-    let onParentClickMock
+  describe('given a onGridClick callback', () => {
+    let onGridClickMock
     beforeEach(() => {
-      onParentClickMock = jest.fn()
-      getComponent = () => shallow(<DioryGrid onParentClick={ onParentClickMock } />)
+      onGridClickMock = jest.fn()
+      getComponent = () => shallow(<DioryGrid onGridClick={ onGridClickMock } />)
     })
 
     describe('when the parent diory is clicked', () => {
@@ -60,20 +60,20 @@ describe('<DioryGrid />', () => {
         getComponent().simulate('click', { some: 'parent-diory' })
       })
 
-      it('calls onParentClick callback', () => {
-        expect(onParentClickMock).toHaveBeenCalledWith({ some: 'parent-diory' })
+      it('calls onGridClick callback', () => {
+        expect(onGridClickMock).toHaveBeenCalledWith({ some: 'parent-diory' })
       })
     })
   })
 
-  describe('given a onChildClick callback', () => {
-    let onChildClickMock
+  describe('given a onDioryClick callback', () => {
+    let onDioryClickMock
     beforeEach(() => {
       diory = {
         diorys: { 'some-first-key': { some: 'first-child-diory' }, 'other-key': { some: 'second-child-diory' } }
       }
-      onChildClickMock = jest.fn()
-      getComponent = () => shallow(<DioryGrid { ...diory } onChildClick={ onChildClickMock } />)
+      onDioryClickMock = jest.fn()
+      getComponent = () => shallow(<DioryGrid { ...diory } onDioryClick={ onDioryClickMock } />)
     })
 
     describe('when the parent diory is clicked', () => {
@@ -81,8 +81,8 @@ describe('<DioryGrid />', () => {
         getComponent().find({ some: 'first-child-diory' }).simulate('click', { some: 'callback' })
       })
 
-      it('calls onParentClick callback', () => {
-        expect(onChildClickMock).toHaveBeenCalledWith({ key: 'some-first-key', some: 'callback' })
+      it('calls onGridClick callback', () => {
+        expect(onDioryClickMock).toHaveBeenCalledWith({ key: 'some-first-key', some: 'callback' })
       })
     })
   })
