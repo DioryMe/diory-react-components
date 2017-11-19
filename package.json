@@ -1,11 +1,15 @@
 {
   "name": "diory-react-components",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "main": "lib/index.js",
   "scripts": {
     "build": "babel src --out-dir lib --ignore test.js",
+    "build:watch": "babel src -w -d lib --ignore test.js",
     "lint": "eslint src --fix",
-    "test": "npm run lint && npm run build && jest --env=jsdom --watch",
+    "lint:watch": "esw -w src/**",
+    "test": "jest --env=jsdom --coverage",
+    "test:watch": "jest --env=jsdom --coverage --watch",
+    "link": "npm link diory-react-components",
     "example": "npm run lint && npm run build && browserify -t [ babelify ] example/app.js -o example/bundle.js",
     "clean": "rm -rf node_modules"
   },
@@ -32,6 +36,7 @@
     "eslint-plugin-promise": "2.0.1",
     "eslint-plugin-react": "6.3.0",
     "eslint-plugin-standard": "2.0.1",
+    "eslint-watch": "^3.1.3",
     "jest": "16.0.2",
     "react": "15.5.4",
     "react-dom": "15.5.4",
