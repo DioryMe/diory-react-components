@@ -75,13 +75,26 @@ const dioryGrid = {
 ![alt text](https://raw.githubusercontent.com/DioryMe/diory-react-components/master/example/diory-example.png)
 
 
-## Running tests
+## Developing library in watch mode
 
-Install dev dependencies:
+Build, run lint and run unit tests in watch mode:
 
 ```sh
-$ npm i -d && npm test
+$ npm run build:watch
+$ npm run test:watch
+$ npm run lint:watch
+
 ```
+
+## Running example
+
+Run example in browser with hot loader:
+
+```sh
+$ npm start
+```
+
+Go to http://localhost:8080
 
 ## Changes
 
