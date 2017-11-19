@@ -8,11 +8,14 @@ coverage
 # Node_modules
 node_modules
 
-# Library
-lib
+# Source
+src
 
 # Logs
 *.log
 
 # Example
-bundle.js
+example
+
+#Code of conduct
+CODE_OF_CONDUCT.md
