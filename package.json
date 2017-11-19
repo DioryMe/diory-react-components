@@ -12,7 +12,8 @@
     "test:watch": "jest --env=jsdom --watch",
     "example": "npm run lint && npm run build && browserify -t [ babelify ] example/app.js -o example/bundle.js",
     "clean": "rm -rf node_modules",
-    "start": "webpack-dev-server --hot --inline"
+    "start": "webpack-dev-server --hot --inline",
+    "publish": "git push && npm publish"
   },
   "dependencies": {
     "prop-types": "15.5.8"
