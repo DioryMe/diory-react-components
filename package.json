@@ -5,13 +5,14 @@
   "scripts": {
     "build": "babel src --out-dir lib --ignore test.js",
     "build:watch": "babel src -w -d lib --ignore test.js",
+    "link": "npm link diory-react-components",
     "lint": "eslint src --fix",
     "lint:watch": "esw -w src/**",
     "test": "jest --env=jsdom --coverage",
-    "test:watch": "jest --env=jsdom --coverage --watch",
-    "link": "npm link diory-react-components",
+    "test:watch": "jest --env=jsdom --watch",
     "example": "npm run lint && npm run build && browserify -t [ babelify ] example/app.js -o example/bundle.js",
-    "clean": "rm -rf node_modules"
+    "clean": "rm -rf node_modules",
+    "start": "webpack-dev-server --hot --inline"
   },
   "dependencies": {
     "prop-types": "15.5.8"
@@ -23,6 +24,7 @@
     "babel-cli": "6.16.0",
     "babel-core": "6.16.0",
     "babel-eslint": "7.0.0",
+    "babel-loader": "^7.1.2",
     "babel-preset-es2015": "6.16.0",
     "babel-preset-react": "6.16.0",
     "babel-preset-stage-2": "6.16.0",
@@ -40,7 +42,10 @@
     "jest": "16.0.2",
     "react": "15.5.4",
     "react-dom": "15.5.4",
-    "react-test-renderer": "15.5.4"
+    "react-hot-loader": "^3.1.3",
+    "react-test-renderer": "15.5.4",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.4"
   },
   "babel": {
     "presets": [
