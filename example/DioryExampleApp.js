@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import DioryGridExample from './DioryGridExample'
-import DioryExample from './DioryExample'
 import { Diory } from '../lib'
+import DioryExample from './DioryExample'
+import DioryGridExample from './DioryGridExample'
+import EventDioryExample from './EventDioryExample'
 
 class DioryExampleApp extends Component {
   constructor() {
@@ -16,7 +17,7 @@ class DioryExampleApp extends Component {
     const { example, pickedDiory } = this.state
 
     return (
-      <div>
+      <Diory styles={ styles.container }>
         { example !== 'diory-react-components' &&
           <Diory
             text="< Back"
@@ -32,14 +33,19 @@ class DioryExampleApp extends Component {
           example === 'diory-react-components' &&
           <div>
             <Diory
+              text="Diory"
+              styles={ styles.list }
+              onClick={() => this.setState(() => ({ example: 'Diory' }))}
+            />
+            <Diory
               text="DioryGrid"
               styles={ styles.list }
               onClick={() => this.setState(() => ({ example: 'DioryGrid' }))}
             />
             <Diory
-              text="Diory"
+              text="EventDiory"
               styles={ styles.list }
-              onClick={() => this.setState(() => ({ example: 'Diory' }))}
+              onClick={() => this.setState(() => ({ example: 'EventDiory' }))}
             />
           </div>
         }
@@ -49,12 +55,22 @@ class DioryExampleApp extends Component {
         { example === 'Diory' &&
           <DioryExample/>
         }
-      </div>
+        { example === 'EventDiory' &&
+          <EventDioryExample/>
+        }
+      </Diory>
     )
   }
 }
 
 const styles = {
+  container: {
+    diory: {
+      position: 'absolute',
+      width: '100%',
+      height: '100%'
+    }
+  },
   back: {
     diory: {
       backgroundColor: 'green',
