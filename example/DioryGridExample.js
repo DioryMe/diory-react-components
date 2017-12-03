@@ -1,5 +1,5 @@
 import React from 'react'
-import { Diory } from '../lib'
+import { Diory, DioryGrid } from '../lib'
 
 const diory = {
   text: 'Hello, I am a diory. Take me home!',
@@ -12,7 +12,7 @@ const diory = {
 }
 
 const dioryGrid = {
-  text: 'This is a grid:',
+  text: 'Inline-block grid',
   image: 'https://gravatar.com/avatar/ff80f8f9bc52f1b79e468a41f2239001',
   styles: {
     text: { fontSize: '2em', fontFamily: 'sans-serif', color: 'white' }
@@ -23,7 +23,8 @@ const dioryGrid = {
     3: diory,
     4: diory,
     5: diory,
-    6: diory
+    6: diory,
+    7: diory
   }
 }
 
@@ -31,30 +32,30 @@ const dioryFlexItem = { ...diory }
 dioryFlexItem.styles.diory.flex = '1 0 20em'
 
 const dioryFlexGrid = {
+  text: 'Flex grid',
   image: 'https://gravatar.com/avatar/ff80f8f9bc52f1b79e468a41f2239001',
   styles: {
-    diory: { display: 'flex', flexWrap: 'wrap' }
+    text: { fontSize: '2em', fontFamily: 'sans-serif', color: 'white' }
   },
   diorys: {
     1: diory,
     2: diory,
     3: diory,
-    4: diory
-  }
-}
-
-const dioryButton = {
-  text: 'This is a button that returns the clicked diory!',
-  styles: {
-    diory: { backgroundColor: 'green', width: '100%', cursor: 'pointer' },
-    text: { fontSize: '2em', fontFamily: 'sans-serif', color: 'white', textAlign: 'center' }
+    4: diory,
+    5: diory,
+    6: diory,
+    7: diory
   }
 }
 
 const DioryExample = ({}) => (
   <div>
-    <Diory { ...diory } />
-    <Diory { ...dioryButton } onClick={ console.log }/>
+    <DioryGrid
+      { ...dioryGrid }
+      onGridClick={ ({ diory }) => console.log('grid:', diory) }
+      onDioryClick={ ({ diory, event }) => { event.stopPropagation(); console.log('diory:', diory); } }
+    />
+    <DioryGrid { ...dioryFlexGrid } />
   </div>
 )
 

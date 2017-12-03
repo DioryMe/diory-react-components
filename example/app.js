@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import DioryExample from './DioryExample'
+import DioryExampleApp from './DioryExampleApp'
 
 ReactDOM.render(
-  <DioryExample />,
+  <DioryExampleApp />,
   document.getElementById('app')
 )
