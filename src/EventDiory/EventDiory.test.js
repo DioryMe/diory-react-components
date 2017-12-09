@@ -13,6 +13,10 @@ describe('<EventDiory />', () => {
 
   it('renders Diory with diory', () => {
     diory = { some: 'some' };
-    expect(getComponent().props()).toEqual(diory);
+    expect(getComponent().props()).toMatchObject(diory);
+  });
+
+  it('missing tests', () => {
+
   });
 })
