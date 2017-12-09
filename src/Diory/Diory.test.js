@@ -14,13 +14,13 @@ describe('<Diory />', () => {
 
   it('sets diory style from props', () => {
     const dioryStyle = { some: 'style' }
-    diory.styles = dioryStyle
+    diory.style = dioryStyle
     expect(getComponent().props().style).toMatchObject(dioryStyle)
   })
 
   it('renders children', () => {
     const component = shallow(
-      <Diory styles={{ diory: { some: 'style' } }} >
+      <Diory style={{ diory: { some: 'style' } }} >
         <div className="some-children"></div>
       </Diory>
     )
@@ -37,9 +37,9 @@ describe('<Diory />', () => {
       expect(getComponent().prop('image')).toEqual(diory.image)
     })
 
-    it('sets image styles from diory', () => {
-      diory.styles = { image: { some: 'image-style' } }
-      expect(getComponent().prop('style')).toEqual(diory.styles.image)
+    it('sets image style from diory', () => {
+      diory.style = { image: { some: 'image-style' } }
+      expect(getComponent().prop('style')).toEqual(diory.style.image)
     })
   })
 
@@ -53,9 +53,9 @@ describe('<Diory />', () => {
       expect(getComponent().prop('text')).toEqual(diory.text)
     })
 
-    it('sets text styles from diory', () => {
-      diory.styles = { text: { some: 'text-style' } }
-      expect(getComponent().prop('style')).toEqual(diory.styles.text)
+    it('sets text style from diory', () => {
+      diory.style = { text: { some: 'text-style' } }
+      expect(getComponent().prop('style')).toEqual(diory.style.text)
     })
   })
 
@@ -69,8 +69,8 @@ describe('<Diory />', () => {
       expect(getComponent().props().link).toEqual('some-link')
     })
 
-    it('sets link styles from diory', () => {
-      diory.styles = { link: { some: 'link-style' } }
+    it('sets link style from diory', () => {
+      diory.style = { link: { some: 'link-style' } }
       expect(getComponent().props().style).toEqual({ some: 'link-style' })
     })
   })

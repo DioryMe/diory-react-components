@@ -17,10 +17,10 @@ const EventDiory = ({ diorys = {}, ...diory }) => (
   </Diory>
 )
 
-const withStyle = (diory, key) => deepmerge({ styles: styles[key] || {} }, diory || {})
-const getDiorysStyles = ({ styles = {} }) => ({ styles: styles.diorys })
+const withStyle = (diory, key) => deepmerge({ style: defaultStyles[key] || {} }, diory || {})
+const getDiorysStyles = ({ style = {} }) => ({ style: style.diorys })
 
-const styles = {
+const defaultStyles = {
   diory: {
     height: '100%', overflow: 'hidden',
     text: { fontSize: '4em', fontFamily: 'sans-serif', color: 'white', textAlign: 'center' },

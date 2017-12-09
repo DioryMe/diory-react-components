@@ -55,13 +55,13 @@ describe('<DioryGrid />', () => {
       expect(getComponent().children().find('Diory').length).toEqual(0)
     })
 
-    describe('given display flex styles', () => {
+    describe('given display flex style', () => {
       beforeEach(() => {
-        diory.styles = { display: 'flex' }
+        diory.style = { display: 'flex' }
       });
 
       it('renders Diory with display flex', () => {
-        expect(getComponent().props().styles).toMatchObject({ display: 'flex' });
+        expect(getComponent().props().style).toMatchObject({ display: 'flex' });
       });
     });
   })

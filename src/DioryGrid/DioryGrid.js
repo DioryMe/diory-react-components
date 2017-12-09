@@ -3,16 +3,16 @@ import PropTypes from 'prop-types'
 import deepmerge from 'deepmerge'
 import { Diory } from '../Diory'
 
-const DioryGrid = ({ diorys = {}, styles = {}, children, onGridClick, onDioryClick, ...diory }) => (
+const DioryGrid = ({ diorys = {}, style = {}, children, onGridClick, onDioryClick, ...diory }) => (
   <Diory
-    { ...withStyles(styles)(diory) }
+    { ...withStyles(style)(diory) }
     onClick={ onGridClick }
   >
-    { children && safeGetChildren(children).map(childWithDiorysStyles(styles)) ||
+    { children && safeGetChildren(children).map(childWithDiorysStyles(style)) ||
 
       Object.entries(diorys).map(([key, childDiory]) => (
         <Diory
-          { ...withStyles(styles, 'diorys')(childDiory) }
+          { ...withStyles(style, 'diorys')(childDiory) }
           key={ key }
           onClick={ props => onDioryClick({ key, ...props }) }
         />
@@ -21,14 +21,14 @@ const DioryGrid = ({ diorys = {}, styles = {}, children, onGridClick, onDioryCli
   </Diory>
 )
 
-const withStyles = (styles, key) => diory => deepmerge({ styles: getStyles(styles, key) }, diory)
-const getStyles = ({ display, ...styles }, key) => key ?
-  deepmerge(defaultStyles[display] && defaultStyles[display][key] || {}, styles[key] || {}) :
-  deepmerge(defaultStyles[display] || {}, styles)
+const withStyles = (style, key) => diory => deepmerge({ style: getStyles(style, key) }, diory)
+const getStyles = ({ display, ...style }, key) => key ?
+  deepmerge(defaultStyles[display] && defaultStyles[display][key] || {}, style[key] || {}) :
+  deepmerge(defaultStyles[display] || {}, style)
 
 const safeGetChildren = children => Array.isArray(children) ? children : [children]
-const childWithDiorysStyles = styles => (child, key) =>
-  cloneElement(child, { key, ...withStyles(styles, 'diorys')(child.props) })
+const childWithDiorysStyles = style => (child, key) =>
+  cloneElement(child, { key, ...withStyles(style, 'diorys')(child.props) })
 
 const defaultStyles = {
   flex: {
@@ -44,7 +44,7 @@ const defaultStyles = {
 
 DioryGrid.propTypes = {
   diorys: PropTypes.object,
-  styles: PropTypes.object,
+  style: PropTypes.object,
   children: PropTypes.node,
   onGridClick: PropTypes.func,
   onDioryClick: PropTypes.func
