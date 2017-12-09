@@ -13,7 +13,7 @@ $ npm i diory-react-components --save
 ## Import
 
 ```js
-import { Diory, DioryGrid } from 'diory-react-components'
+import { Diory, DioryGrid, EventDiory } from 'diory-react-components'
 
 ```
 
@@ -68,7 +68,7 @@ const dioryGrid = {
 </div>
 ```
 
-![alt text](https://raw.githubusercontent.com/DioryMe/diory-react-components/master/example/DioryExample.png)
+![Diory](https://raw.githubusercontent.com/DioryMe/diory-react-components/master/example/DioryExample.png)
 
 #### EventDiory
 ```js
@@ -91,7 +91,7 @@ const eventDiory = {
 <EventDiory { ...eventDiory }>
 ```
 
-![alt text](https://raw.githubusercontent.com/DioryMe/diory-react-components/master/example/EventDioryExample.png)
+![EventDiory](https://raw.githubusercontent.com/DioryMe/diory-react-components/master/example/EventDioryExample.png)
 
 
 ## Developing library in watch mode
@@ -130,5 +130,5 @@ Go to http://localhost:9010
 
 ## License
 
-Copyright © 2017 [Olli-Pekka Pohjola](#Olli-Pekka Pohjola)
+Copyright © 2017 Olli-Pekka Pohjola
 Licensed under the MIT license.

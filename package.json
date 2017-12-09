@@ -94,6 +94,10 @@
   },
   "description": "Create React components from Diograph data",
   "homepage": "https://github.com/DioryMe/diory-react-components",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/DioryMe/diory-react-components.git"
+  },
   "keywords": [
     "diory",
     "react",
