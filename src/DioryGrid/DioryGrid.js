@@ -32,16 +32,12 @@ const childWithDiorysStyles = styles => (child, key) =>
 
 const defaultStyles = {
   flex: {
-    diory: {
-      display: 'flex',
-      flexWrap: 'wrap',
-      alignSelf: 'flex-start',
-    },
+    display: 'flex',
+    flexWrap: 'wrap',
+    alignSelf: 'flex-start',
     diorys: {
-      diory: {
-        height: '10em',
-        width: '20em',
-      }
+      height: '10em',
+      width: '20em',
     }
   }
 }

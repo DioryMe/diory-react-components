@@ -13,7 +13,7 @@ describe('<DioryGrid />', () => {
 
   it('renders one child', () => {
     const component = shallow(
-      <DioryGrid styles={{ diory: { some: 'style' } }} >
+      <DioryGrid>
         <div className="some-child"></div>
       </DioryGrid>
     )
@@ -22,7 +22,7 @@ describe('<DioryGrid />', () => {
 
   it('renders several children', () => {
     const component = shallow(
-      <DioryGrid styles={{ diory: { some: 'style' } }} >
+      <DioryGrid>
         <div className="some-children"></div>
         <div className="some-children"></div>
       </DioryGrid>
@@ -61,7 +61,7 @@ describe('<DioryGrid />', () => {
       });
 
       it('renders Diory with display flex', () => {
-        expect(getComponent().props().styles.diory).toMatchObject({ display: 'flex' });
+        expect(getComponent().props().styles).toMatchObject({ display: 'flex' });
       });
     });
   })

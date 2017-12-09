@@ -22,7 +22,7 @@ const getDiorysStyles = ({ styles = {} }) => ({ styles: styles.diorys })
 
 const styles = {
   diory: {
-    diory: { height: '100%', overflow: 'hidden' },
+    height: '100%', overflow: 'hidden',
     text: { fontSize: '4em', fontFamily: 'sans-serif', color: 'white', textAlign: 'center' },
     image: { opacity: '0.9', filter: 'blur(10px)', transform: 'scale(1.05)' }
   },
@@ -46,11 +46,9 @@ const styles = {
   },
   images: {
     display: 'flex',
-    diory: {
-      justifyContent: 'center',
-      width: 'initial',
-      height: 'initial'
-    }
+    justifyContent: 'center',
+    width: 'initial',
+    height: 'initial'
   },
   places: {
     text: {
@@ -62,13 +60,9 @@ const styles = {
   },
   links: {
     display: 'flex',
-    diory: {
-      height: 'initial'
-    },
+    height: 'initial',
     diorys: {
-      diory: {
-        backgroundColor: 'green'
-      },
+      backgroundColor: 'green',
       text: {
         fontFamily: 'arial',
         fontSize: '1em',
@@ -79,18 +73,14 @@ const styles = {
   },
   persons: {
     display: 'flex',
-    diory: {
-      justifyContent: 'center',
-      width: 'initial',
-      height: 'initial'
-    },
+    justifyContent: 'center',
+    width: 'initial',
+    height: 'initial',
     diorys: {
-      diory: {
-        margin: '3em',
-        width: '5em',
-        height: '5em',
-        flex: ''
-      },
+      margin: '3em',
+      width: '5em',
+      height: '5em',
+      flex: '',
       text: {
         top: '100%',
         fontFamily: 'arial',
