@@ -131,4 +131,5 @@ Go to http://localhost:9010
 ## License
 
 Copyright © 2017 Olli-Pekka Pohjola
+
 Licensed under the MIT license.
