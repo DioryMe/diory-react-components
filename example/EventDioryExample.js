@@ -54,10 +54,10 @@ const eventDiory = {
     },
     links: {
       diorys: [
-        { text: 'Tampere', id: 'https://visittampere.fi/', image: 'https://www.tampere.fi/kuvat/y/vkztdGApB/nasinneulailmakuva17.jpg' },
-        { text: 'Särkänniemi', id: 'http://www.sarkanniemi.fi/', image: 'http://www.sarkanniemi.fi/wp-content/uploads/2015/03/angrybirdsland_featured.jpg'},
-        { text: 'Pyynikki', id: 'https://en.wikipedia.org/wiki/Pyynikki', image: 'https://visittampere.fi/media/bbe15520-9742-11e4-906f-817e7c88585d.JPG' },
-        { text: 'Finlayson', id: 'http://www.finlaysoninalue.fi/', image: 'https://varma.hyperin.com/hyperin-portal/imageserver/banners/845/Finlaysoninalue_header_katu_2000x1000px.jpg' }
+        { text: 'Tampere', link: 'https://visittampere.fi/', image: 'https://www.tampere.fi/kuvat/y/vkztdGApB/nasinneulailmakuva17.jpg' },
+        { text: 'Särkänniemi', link: 'http://www.sarkanniemi.fi/', image: 'http://www.sarkanniemi.fi/wp-content/uploads/2015/03/angrybirdsland_featured.jpg'},
+        { text: 'Pyynikki', link: 'https://en.wikipedia.org/wiki/Pyynikki', image: 'https://visittampere.fi/media/bbe15520-9742-11e4-906f-817e7c88585d.JPG' },
+        { text: 'Finlayson', link: 'http://www.finlaysoninalue.fi/', image: 'https://varma.hyperin.com/hyperin-portal/imageserver/banners/845/Finlaysoninalue_header_katu_2000x1000px.jpg' }
       ],
       style: {
         flex: '4 1 40em',
