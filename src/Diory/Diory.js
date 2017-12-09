@@ -18,7 +18,7 @@ const Diory = ({ onClick, children, ...diory }) => {
     >
       <Image { ...diory } style={ imageStyle } />
       <Text { ...diory } style={ textStyle } />
-      <Link { ...diory } style={ linkStyle }/>
+      <Link { ...diory } style={ linkStyle } />
       { children }
     </div>
   )

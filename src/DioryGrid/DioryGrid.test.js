@@ -14,7 +14,7 @@ describe('<DioryGrid />', () => {
   it('renders one child', () => {
     const component = shallow(
       <DioryGrid>
-        <div className="some-child"></div>
+        <div className="some-child" />
       </DioryGrid>
     )
     expect(component.find('.some-child').exists()).toEqual(true)
@@ -23,8 +23,8 @@ describe('<DioryGrid />', () => {
   it('renders several children', () => {
     const component = shallow(
       <DioryGrid>
-        <div className="some-children"></div>
-        <div className="some-children"></div>
+        <div className="some-children" />
+        <div className="some-children" />
       </DioryGrid>
     )
     expect(component.find('.some-children').length).toEqual(2)
@@ -58,12 +58,12 @@ describe('<DioryGrid />', () => {
     describe('given display flex style', () => {
       beforeEach(() => {
         diory.style = { display: 'flex' }
-      });
+      })
 
       it('renders Diory with display flex', () => {
-        expect(getComponent().props().style).toMatchObject({ display: 'flex' });
-      });
-    });
+        expect(getComponent().props().style).toMatchObject({ display: 'flex' })
+      })
+    })
   })
 
   describe('given a onGridClick callback', () => {

@@ -5,7 +5,7 @@ import { Diory, DioryGrid } from '../.'
 
 const EventDiory = ({ diorys = {}, ...diory }) => (
   <Diory { ...withStyle(diory, 'diory') }>
-    <DioryGrid { ...withStyle(getDiorysStyles(diory), 'diorys')} >
+    <DioryGrid { ...withStyle(getDiorysStyles(diory), 'diorys') }>
       <Diory { ...withStyle(diorys.startDate, 'date') } />
       <Diory { ...withStyle(diorys.endDate, 'date') } />
       <Diory { ...withStyle(diorys.description, 'description') } />
@@ -22,7 +22,8 @@ const getDiorysStyles = ({ style = {} }) => ({ style: style.diorys })
 
 const defaultStyles = {
   diory: {
-    height: '100%', overflow: 'hidden',
+    height: '100%',
+    overflow: 'hidden',
     text: { fontSize: '4em', fontFamily: 'sans-serif', color: 'white', textAlign: 'center' },
     image: { opacity: '0.9', filter: 'blur(10px)', transform: 'scale(1.05)' }
   },

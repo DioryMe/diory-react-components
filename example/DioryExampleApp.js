@@ -6,7 +6,7 @@ import EventDioryExample from './EventDioryExample'
 
 class DioryExampleApp extends Component {
   constructor() {
-    super();
+    super()
     this.state = {
       example: 'diory-react-components',
       pickedDiory: {}

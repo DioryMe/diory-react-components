@@ -10,7 +10,7 @@ describe('<Diory />', () => {
   beforeEach(() => {
     diory = {}
     getComponent = () => shallow(<Diory { ...diory } />)
-  });
+  })
 
   it('sets diory style from props', () => {
     const dioryStyle = { some: 'style' }
@@ -21,7 +21,7 @@ describe('<Diory />', () => {
   it('renders children', () => {
     const component = shallow(
       <Diory style={{ diory: { some: 'style' } }} >
-        <div className="some-children"></div>
+        <div className="some-children" />
       </Diory>
     )
     expect(component.find('.some-children').exists()).toEqual(true)

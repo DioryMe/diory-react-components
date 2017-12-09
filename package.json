@@ -80,7 +80,8 @@
       "comma-dangle": [
         "error",
         "only-multiline"
-      ]
+      ],
+      "jsx-quotes": ["error", "prefer-double"]
     }
   },
   "jest": {

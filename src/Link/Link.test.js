@@ -10,12 +10,12 @@ describe('<Link />', () => {
   beforeEach(() => {
     props = {}
     getComponent = () => shallow(<Link { ...props } />)
-  });
+  })
 
   describe('given a link as prop', () => {
     beforeEach(() => {
       props.link = 'some-link'
-    });
+    })
 
     it('renders component', () => {
       expect(getComponent().exists()).toEqual(true)
