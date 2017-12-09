@@ -66,7 +66,7 @@ class DioryExampleApp extends Component {
 const styles = {
   container: {
     diory: {
-      position: 'absolute',
+      position: 'relative',
       width: '100%',
       height: '100%'
     }
