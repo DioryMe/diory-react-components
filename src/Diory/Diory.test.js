@@ -14,7 +14,7 @@ describe('<Diory />', () => {
 
   it('sets diory style from props', () => {
     const dioryStyle = { some: 'style' }
-    diory.styles = { diory: dioryStyle }
+    diory.styles = dioryStyle
     expect(getComponent().props().style).toMatchObject(dioryStyle)
   })
 
