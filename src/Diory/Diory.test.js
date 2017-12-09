@@ -4,59 +4,63 @@ import { shallow } from 'enzyme'
 import Diory from './Diory'
 
 describe('<Diory />', () => {
-  let component
+  let getComponent
+  let diory
+
+  beforeEach(() => {
+    diory = {}
+    getComponent = () => shallow(<Diory { ...diory } />)
+  });
 
   it('sets diory style from props', () => {
-    component = shallow(<Diory styles={{ diory: { some: 'style' } }} />)
-    expect(component.prop('style').some).toEqual('style')
+    const dioryStyle = { some: 'style' }
+    diory.styles = { diory: dioryStyle }
+    expect(getComponent().props().style).toMatchObject(dioryStyle)
   })
 
   it('renders its children', () => {
-    component = shallow(<Diory><div className='children'>some children</div></Diory>)
-    expect(component.find('.children').html()).toEqual('<div class="children">some children</div>')
+    const component = shallow(
+      <Diory styles={{ diory: { some: 'style' } }} >
+        <div className="some-children"></div>
+      </Diory>
+    )
+    expect(component.find('.some-children').exists()).toEqual(true)
   })
 
   describe('a <Image /> within', () => {
-    let diory
-    let imageComponent
     beforeEach(() => {
-      diory = { image: 'some-image', styles: { image: { some: 'image-style' } } }
-      component = shallow(<Diory { ...diory } />)
-      imageComponent = component.find('Image')
+      getComponent = () => shallow(<Diory { ...diory } />).find('Image')
     })
 
     it('sets image from diory', () => {
-      expect(imageComponent.prop('image')).toEqual(diory.image)
+      diory.image = 'some-image'
+      expect(getComponent().prop('image')).toEqual(diory.image)
     })
 
     it('sets image styles from diory', () => {
-      expect(imageComponent.prop('style')).toEqual(diory.styles.image)
+      diory.styles = { image: { some: 'image-style' } }
+      expect(getComponent().prop('style')).toEqual(diory.styles.image)
     })
   })
 
   describe('a <Text /> within', () => {
-    let diory
-    let textComponent
     beforeEach(() => {
-      diory = { text: 'some-text', styles: { text: { some: 'text-style' } } }
-      component = shallow(<Diory { ...diory } />)
-      textComponent = component.find('Text')
+      getComponent = () => shallow(<Diory { ...diory } />).find('Text')
     })
 
     it('sets text from diory', () => {
-      expect(textComponent.prop('text')).toEqual(diory.text)
+      diory.text = 'some-text'
+      expect(getComponent().prop('text')).toEqual(diory.text)
     })
 
     it('sets text styles from diory', () => {
-      expect(textComponent.prop('style')).toEqual(diory.styles.text)
+      diory.styles = { text: { some: 'text-style' } }
+      expect(getComponent().prop('style')).toEqual(diory.styles.text)
     })
   })
 
   describe('a <Link /> within', () => {
-    let getComponent
-    let diory
     beforeEach(() => {
-      diory = {}
       getComponent = () => shallow(<Diory { ...diory } />).find('Link')
     })
 
@@ -72,24 +76,27 @@ describe('<Diory />', () => {
   })
 
   describe('given contains onClick callback', () => {
-    let dioryMock
+    let component
     let onClickMock
     beforeEach(() => {
-      dioryMock = { imageUrl: 'some-image-url', styles: {}, text: 'some-text' }
       onClickMock = jest.fn()
-      component = shallow(<Diory { ...dioryMock } onClick={ onClickMock } />)
+      diory.onClick = onClickMock
     })
 
     describe('when not clicked', () => {
       it('does not call onClick', () => {
+        getComponent()
         expect(onClickMock).not.toHaveBeenCalled()
       })
     })
 
     describe('when clicked', () => {
       it('calls onClick', () => {
+        diory.some = 'diory'
+        diory.onClick = onClickMock
+        component = getComponent()
         component.simulate('click', 'some-event')
-        expect(onClickMock).toHaveBeenCalledWith({ diory: dioryMock, event: 'some-event' })
+        expect(onClickMock).toHaveBeenCalledWith({ diory: { some: 'diory' }, event: 'some-event' })
       })
     })
   })
