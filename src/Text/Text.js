@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 const defaultStyles = {
   position: 'relative',
-  padding: '1em'
+  padding: '0.5em'
 }
 
 export const Text = ({ text, style }) => !text ? null : (
