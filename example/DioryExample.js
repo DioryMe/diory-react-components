@@ -4,7 +4,8 @@ import { Diory } from '../lib'
 const diory = {
   text: 'Hello, I am a diory. Take me home!',
   image: 'https://gravatar.com/avatar/ff80f8f9bc52f1b79e468a41f2239001',
-  styles: {
+  link: 'http://tampere.fi',
+  style: {
     display: 'inline-block', width: '20em', height: '20em', backgroundColor: 'green', margin: '1em',
     text: { fontSize: '2em', fontFamily: 'sans-serif', color: 'white', textAlign: 'center', textShadow: '1px 1px green' },
     image: { opacity: 0.6, filter: 'blur(5px)' }
@@ -14,7 +15,7 @@ const diory = {
 const dioryGrid = {
   text: 'This is a grid:',
   image: 'https://gravatar.com/avatar/ff80f8f9bc52f1b79e468a41f2239001',
-  styles: {
+  style: {
     text: { fontSize: '2em', fontFamily: 'sans-serif', color: 'white' }
   },
   diorys: {
@@ -29,7 +30,7 @@ const dioryGrid = {
 
 const dioryButton = {
   text: 'This is a button that returns the clicked diory!',
-  styles: {
+  style: {
     backgroundColor: 'green', width: '100%', cursor: 'pointer',
     text: { fontSize: '2em', fontFamily: 'sans-serif', color: 'white', textAlign: 'center' }
   }

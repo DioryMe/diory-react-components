@@ -17,34 +17,34 @@ class DioryExampleApp extends Component {
     const { example, pickedDiory } = this.state
 
     return (
-      <Diory styles={ styles.container }>
+      <Diory style={ styles.container }>
         { example !== 'diory-react-components' &&
           <Diory
             text="< Back"
-            styles={ styles.back }
+            style={ styles.back }
             onClick={() => this.setState(() => ({ example: 'diory-react-components' }))}
           />
         }
         <Diory
           text={ example + ' example' }
-          styles={ styles.title }
+          style={ styles.title }
         />
         {
           example === 'diory-react-components' &&
           <div>
             <Diory
               text="Diory"
-              styles={ styles.list }
+              style={ styles.list }
               onClick={() => this.setState(() => ({ example: 'Diory' }))}
             />
             <Diory
               text="DioryGrid"
-              styles={ styles.list }
+              style={ styles.list }
               onClick={() => this.setState(() => ({ example: 'DioryGrid' }))}
             />
             <Diory
               text="EventDiory"
-              styles={ styles.list }
+              style={ styles.list }
               onClick={() => this.setState(() => ({ example: 'EventDiory' }))}
             />
           </div>

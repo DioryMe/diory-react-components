@@ -4,28 +4,28 @@ import { EventDiory } from '../lib'
 const eventDiory = {
   text: 'Weekend in Tampere',
   image: 'http://blog.radissonblu.com/wp-content/uploads/2016/03/JuhaSuhonen_Tammerkoski_Tampere.jpg',
-  styles: {
+  style: {
     diorys: { maxWidth: '60em', margin: '0 auto', alignItems: 'center' },
     text: { textShadow: '1px 1px #366b95' }
   },
   diorys: {
     startDate: {
       text: '1.12.2017',
-      styles: {
+      style: {
         height: 'initial',
         flex: '0 1 10em'
       }
     },
     endDate: {
       text: '3.12.2017',
-      styles: {
+      style: {
         height: 'initial',
         flex: '0 1 10em'
       }
     },
     description: {
       text: 'We spent a nice weekend in Tampere. Feeling was very dark. Almost no sun at all.',
-      styles: {
+      style: {
         height: 'initial',
         flex: '2 1 20em'
       }
@@ -39,7 +39,7 @@ const eventDiory = {
         { image: 'https://www.tampere.fi/kuvat/tampere/t/0dEaZOL8l/treiltavalaistuksessa.jpg' },
         { image: 'http://lakecityrally.fi/wp-content/uploads/2015/03/Tampere_landscape.jpg' },
       ],
-      styles: {
+      style: {
         diorys: {
           flex: '1 1 20em'
         }
@@ -47,7 +47,7 @@ const eventDiory = {
     },
     places: {
       image: 'https://www.google.fi/maps/vt/data=TR9-uFm_5rEZpV9q-SwlrFfIFKNMpBWIEPbaJbOgIIuoYU4R9_icKCtCWznNj2ORi-hT33Le1sAH4Wpfcia-KNiOCiMJ1svEbRxG4N6h_4-m3pgi0Pg',
-      styles: {
+      style: {
         height: '10em',
         flex: '1 1 20em'
       }
@@ -59,7 +59,7 @@ const eventDiory = {
         { text: 'Pyynikki', id: 'https://en.wikipedia.org/wiki/Pyynikki', image: 'https://visittampere.fi/media/bbe15520-9742-11e4-906f-817e7c88585d.JPG' },
         { text: 'Finlayson', id: 'http://www.finlaysoninalue.fi/', image: 'https://varma.hyperin.com/hyperin-portal/imageserver/banners/845/Finlaysoninalue_header_katu_2000x1000px.jpg' }
       ],
-      styles: {
+      style: {
         flex: '4 1 40em',
         diorys: {
           height: '5em',
@@ -73,7 +73,7 @@ const eventDiory = {
         { text: 'Anna', image: 'https://4.bp.blogspot.com/-bqAMSXBNpwI/VxTHpJh2U4I/AAAAAAAAAQs/MF8O5i56QfgM-qk_vgL19ME00XkqBFRbQCLcB/s1600/MariannaKoli.JPG' },
         { text: 'Laura', image: 'http://www.lumene.com/sites/default/files/HP-Hero-new-Desktop.jpg' },
       ],
-      styles: {
+      style: {
         margin: '0 auto'
       }
     }

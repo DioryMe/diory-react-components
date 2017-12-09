@@ -4,7 +4,7 @@ import { Diory, DioryGrid } from '../lib'
 const diory = {
   text: 'Hello, I am a diory. Take me home!',
   image: 'https://gravatar.com/avatar/ff80f8f9bc52f1b79e468a41f2239001',
-  styles: {
+  style: {
     display: 'inline-block', width: '20em', height: '20em', backgroundColor: 'green', margin: '1em',
     text: { fontSize: '2em', fontFamily: 'sans-serif', color: 'white', textAlign: 'center', textShadow: '1px 1px green' },
     image: { opacity: 0.6, filter: 'blur(5px)' }
@@ -14,7 +14,7 @@ const diory = {
 const dioryGrid = {
   text: 'Inline-block grid',
   image: 'https://gravatar.com/avatar/ff80f8f9bc52f1b79e468a41f2239001',
-  styles: {
+  style: {
     text: { fontSize: '2em', fontFamily: 'sans-serif', color: 'white' }
   },
   diorys: {
@@ -29,12 +29,12 @@ const dioryGrid = {
 }
 
 const dioryFlexItem = { ...diory }
-dioryFlexItem.styles.flex = '1 0 20em'
+dioryFlexItem.style.flex = '1 0 20em'
 
 const dioryFlexGrid = {
   text: 'Flex grid',
   image: 'https://gravatar.com/avatar/ff80f8f9bc52f1b79e468a41f2239001',
-  styles: {
+  style: {
     text: { fontSize: '2em', fontFamily: 'sans-serif', color: 'white' }
   },
   diorys: {
