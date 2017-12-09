@@ -18,7 +18,7 @@ describe('<Diory />', () => {
     expect(getComponent().props().style).toMatchObject(dioryStyle)
   })
 
-  it('renders its children', () => {
+  it('renders children', () => {
     const component = shallow(
       <Diory styles={{ diory: { some: 'style' } }} >
         <div className="some-children"></div>
