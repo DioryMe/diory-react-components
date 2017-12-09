@@ -26,7 +26,7 @@ const diory = {
   image: 'https://gravatar.com/avatar/ff80f8f9bc52f1b79e468a41f2239001',
   link: 'http://tampere.fi',
   style: {
-    display: 'inline-block', width: '20em', height: '20em', backgroundColor: 'green', margin: '1em',
+    width: '20em', height: '20em', backgroundColor: 'green', margin: '1em',
     text: { fontSize: '2em', fontFamily: 'sans-serif', color: 'white', textAlign: 'center', textShadow: '1px 1px green' },
     image: { opacity: 0.6, filter: 'blur(5px)' }
   }
@@ -34,18 +34,24 @@ const diory = {
 ```
 ```js
 const dioryGrid = {
-  text: 'This is a grid',
+  text: 'This is a flex grid',
   image: 'https://gravatar.com/avatar/ff80f8f9bc52f1b79e468a41f2239001',
   style: {
+    display: 'flex',
     text: { fontSize: '2em', fontFamily: 'sans-serif', color: 'white' }
   },
   diorys: {
     someKey: {
-      text: 'This is a diory',
+      text: 'This diory is positioned to the top right corner of the grid',
       link: 'http://some.link',
+      style: {
+        position: 'absolute',
+        top: 0,
+        right: 0
+      }
     },
     otherKey: {
-      text: 'This is a red diory with white text',
+      text: 'This text is white in a red background',
       style: {
         backgroundColor: 'red',
         text: {
