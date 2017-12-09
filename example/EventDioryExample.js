@@ -69,9 +69,9 @@ const eventDiory = {
     },
     persons: {
       diorys: [
-        { text: 'Tapio', image: 'http://gatewaynews.co.za/wp-content/uploads/2011/09/TAPIO.jpg' },
-        { text: 'Anna', image: 'https://4.bp.blogspot.com/-bqAMSXBNpwI/VxTHpJh2U4I/AAAAAAAAAQs/MF8O5i56QfgM-qk_vgL19ME00XkqBFRbQCLcB/s1600/MariannaKoli.JPG' },
-        { text: 'Laura', image: 'http://www.lumene.com/sites/default/files/HP-Hero-new-Desktop.jpg' },
+        { text: 'Grant', image: 'https://upload.wikimedia.org/wikipedia/commons/9/9a/Grant_Hackett_%2834690236782%29_%28face%29.jpg' },
+        { text: 'Miriam', image: 'https://upload.wikimedia.org/wikipedia/commons/e/e1/Miriam_face_black_and_white.jpg' },
+        { text: 'Koel', image: 'https://upload.wikimedia.org/wikipedia/commons/0/0d/Koel_Mullick_face.jpg' },
       ],
       style: {
         margin: '0 auto'

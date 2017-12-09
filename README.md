@@ -19,7 +19,7 @@ import { Diory, DioryGrid } from 'diory-react-components'
 
 ## Usage
 
-#### Diograph data
+### Diograph data
 ```js
 const diory = {
   text: 'Hello, I am a diory. Take me home!',
@@ -57,22 +57,41 @@ const dioryGrid = {
 }
 ```
 
-#### Diory components
+### Diory components
+#### Diory
 ```jsx
 <div>
   <Diory 
     { ...diory }
     onClick={ ({ diory, event}) => doSomething(key,diory) }
   />
-  <DioryGrid
-    { ...dioryGrid }
-    onGridClick={ ({ diory, event }) => doSomething() }
-    onDioryClick={ ({ key, diory, event }) => doSomethingElse() }
-  />
 </div>
 ```
 
-![alt text](https://raw.githubusercontent.com/DioryMe/diory-react-components/master/example/diory-example.png)
+![alt text](https://raw.githubusercontent.com/DioryMe/diory-react-components/master/example/DioryExample.png)
+
+#### EventDiory
+```js
+const eventDiory = {
+  text: 'Weekend in Tampere',
+  ...
+  diorys: {
+    startDate: ...
+    endDate: ...
+    description: ...
+    images: ...
+    places:...
+    links: ...
+    persons: ...
+  }
+}
+```
+
+```jsx
+<EventDiory { ...eventDiory }>
+```
+
+![alt text](https://raw.githubusercontent.com/DioryMe/diory-react-components/master/example/EventDioryExample.png)
 
 
 ## Developing library in watch mode
