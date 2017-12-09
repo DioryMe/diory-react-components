@@ -34,11 +34,12 @@ const diory = {
 ```
 ```js
 const dioryGrid = {
-  text: 'This is a flex grid',
-  image: 'https://gravatar.com/avatar/ff80f8f9bc52f1b79e468a41f2239001',
+  text: 'This is a grid',
   style: {
-    display: 'flex',
-    text: { fontSize: '2em', fontFamily: 'sans-serif', color: 'white' }
+    backgroundColor: 'blue',
+    fontFamily: 'arial',
+    color: 'white',
+    text: { fontSize: '2em', width: '100%' }
   },
   diorys: {
     someKey: {
@@ -54,6 +55,8 @@ const dioryGrid = {
       text: 'This text is white in a red background',
       style: {
         backgroundColor: 'red',
+        width: '20em',
+        height: '10em',
         text: {
           color: 'white'
         }
@@ -66,15 +69,25 @@ const dioryGrid = {
 ### Diory components
 #### Diory
 ```jsx
-<div>
-  <Diory 
-    { ...diory }
-    onClick={ ({ diory, event}) => doSomething(key,diory) }
-  />
-</div>
+<Diory 
+  { ...diory }
+  onClick={ ({ diory, event}) => console.log(diory, event) }
+/>
 ```
 
 ![Diory](https://raw.githubusercontent.com/DioryMe/diory-react-components/master/example/DioryExample.png)
+
+#### DioryGrid
+```jsx
+<DioryGrid
+  { ...dioryGrid }
+  onGridClick={ ({ diory, event }) => console.log('grid:', diory, event) }
+  onDioryClick={ ({ key, diory, event }) => { event.stopPropagation(); console.log('diory:', key, diory, event); } }
+/>
+```
+
+![DioryGrid](https://raw.githubusercontent.com/DioryMe/diory-react-components/master/example/DioryGridExample.png)
+
 
 #### EventDiory
 ```js
@@ -94,7 +107,7 @@ const eventDiory = {
 ```
 
 ```jsx
-<EventDiory { ...eventDiory }>
+<EventDiory { ...eventDiory } />
 ```
 
 ![EventDiory](https://raw.githubusercontent.com/DioryMe/diory-react-components/master/example/EventDioryExample.png)
