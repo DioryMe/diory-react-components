@@ -65,21 +65,17 @@ class DioryExampleApp extends Component {
 
 const styles = {
   container: {
-    diory: {
-      position: 'relative',
-      width: '100%',
-      height: '100%'
-    }
+    position: 'relative',
+    width: '100%',
+    height: '100%'
   },
   back: {
-    diory: {
-      backgroundColor: 'green',
-      cursor: 'pointer',
-      borderBottom: '2px solid white',
-      width: '100px',
-      float: 'left',
-      zIndex: '1'
-    },
+    backgroundColor: 'green',
+    cursor: 'pointer',
+    borderBottom: '2px solid white',
+    width: '100px',
+    float: 'left',
+    zIndex: '1',
     text: {
       fontWeight: 'bold',
       fontFamily: 'arial',
@@ -87,10 +83,8 @@ const styles = {
     }
   },
   title: {
-    diory: {
-      backgroundColor: 'green',
-      borderBottom: '2px solid white'
-    },
+    backgroundColor: 'green',
+    borderBottom: '2px solid white',
     text: {
       fontWeight: 'bold',
       fontFamily: 'arial',
@@ -98,11 +92,9 @@ const styles = {
     }
   },
   list: {
-    diory: {
-      backgroundColor: 'grey',
-      cursor: 'pointer',
-      borderBottom: '2px solid white'
-    },
+    backgroundColor: 'grey',
+    cursor: 'pointer',
+    borderBottom: '2px solid white',
     text: {
       fontFamily: 'arial',
       color: 'white'

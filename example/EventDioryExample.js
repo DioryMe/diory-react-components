@@ -5,35 +5,29 @@ const eventDiory = {
   text: 'Weekend in Tampere',
   image: 'http://blog.radissonblu.com/wp-content/uploads/2016/03/JuhaSuhonen_Tammerkoski_Tampere.jpg',
   styles: {
-    diorys: { diory: { maxWidth: '60em', margin: '0 auto', alignItems: 'center' } },
+    diorys: { maxWidth: '60em', margin: '0 auto', alignItems: 'center' },
     text: { textShadow: '1px 1px #366b95' }
   },
   diorys: {
     startDate: {
       text: '1.12.2017',
       styles: {
-        diory: {
-          height: 'initial',
-          flex: '0 1 10em'
-        }
+        height: 'initial',
+        flex: '0 1 10em'
       }
     },
     endDate: {
       text: '3.12.2017',
       styles: {
-        diory: {
-          height: 'initial',
-          flex: '0 1 10em'
-        }
+        height: 'initial',
+        flex: '0 1 10em'
       }
     },
     description: {
       text: 'We spent a nice weekend in Tampere. Feeling was very dark. Almost no sun at all.',
       styles: {
-        diory: {
-          height: 'initial',
-          flex: '2 1 20em'
-        }
+        height: 'initial',
+        flex: '2 1 20em'
       }
     },
     images: {
@@ -47,19 +41,15 @@ const eventDiory = {
       ],
       styles: {
         diorys: {
-          diory: {
-            flex: '1 1 20em'
-          }
+          flex: '1 1 20em'
         }
       }
     },
     places: {
       image: 'https://www.google.fi/maps/vt/data=TR9-uFm_5rEZpV9q-SwlrFfIFKNMpBWIEPbaJbOgIIuoYU4R9_icKCtCWznNj2ORi-hT33Le1sAH4Wpfcia-KNiOCiMJ1svEbRxG4N6h_4-m3pgi0Pg',
       styles: {
-        diory: {
-          height: '10em',
-          flex: '1 1 20em'
-        }
+        height: '10em',
+        flex: '1 1 20em'
       }
     },
     links: {
@@ -70,14 +60,10 @@ const eventDiory = {
         { text: 'Finlayson', id: 'http://www.finlaysoninalue.fi/', image: 'https://varma.hyperin.com/hyperin-portal/imageserver/banners/845/Finlaysoninalue_header_katu_2000x1000px.jpg' }
       ],
       styles: {
-        diory: {
-          flex: '4 1 40em'
-        },
+        flex: '4 1 40em',
         diorys: {
-          diory: {
-            height: '5em',
-            flex: '1 1 20em'
-          }
+          height: '5em',
+          flex: '1 1 20em'
         }
       }
     },
@@ -88,9 +74,7 @@ const eventDiory = {
         { text: 'Laura', image: 'http://www.lumene.com/sites/default/files/HP-Hero-new-Desktop.jpg' },
       ],
       styles: {
-        diory: {
-          margin: '0 auto'
-        }
+        margin: '0 auto'
       }
     }
   }
