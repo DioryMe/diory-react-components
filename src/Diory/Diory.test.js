@@ -52,6 +52,25 @@ describe('<Diory />', () => {
     })
   })
 
+  describe('a <Link /> within', () => {
+    let getComponent
+    let diory
+    beforeEach(() => {
+      diory = {}
+      getComponent = () => shallow(<Diory { ...diory } />).find('Link')
+    })
+
+    it('sets link from diory', () => {
+      diory.link = 'some-link'
+      expect(getComponent().props().link).toEqual('some-link')
+    })
+
+    it('sets link styles from diory', () => {
+      diory.styles = { link: { some: 'link-style' } }
+      expect(getComponent().props().style).toEqual({ some: 'link-style' })
+    })
+  })
+
   describe('given contains onClick callback', () => {
     let dioryMock
     let onClickMock
