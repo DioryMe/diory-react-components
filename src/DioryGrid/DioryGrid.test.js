@@ -11,21 +11,31 @@ describe('<DioryGrid />', () => {
     getComponent = () => shallow(<DioryGrid { ...diory } />)
   })
 
-  describe('given a diory without connected diorys', () => {
-    beforeEach(() => {
-      diory = { some: 'diory-prop' }
-    })
-
-    it('passes diory props to the container Diory', () => {
-      expect(getComponent().find('Diory').first().prop('some')).toEqual('diory-prop')
-    })
-
-    it('does not pass children as props to the container Diory', () => {
-      expect(getComponent().find('Diory').first().prop('children').length).toEqual(0)
-    })
+  it('renders one child', () => {
+    const component = shallow(
+      <DioryGrid styles={{ diory: { some: 'style' } }} >
+        <div className="some-child"></div>
+      </DioryGrid>
+    )
+    expect(component.find('.some-child').exists()).toEqual(true)
   })
 
-  describe('given a diory with connected diorys', () => {
+  it('renders several children', () => {
+    const component = shallow(
+      <DioryGrid styles={{ diory: { some: 'style' } }} >
+        <div className="some-children"></div>
+        <div className="some-children"></div>
+      </DioryGrid>
+    )
+    expect(component.find('.some-children').length).toEqual(2)
+  })
+
+  it('renders container Diory', () => {
+    diory = { some: 'diory-prop' }
+    expect(getComponent().find('Diory').first().prop('some')).toEqual('diory-prop')
+  })
+
+  describe('given diorys', () => {
     beforeEach(() => {
       diory = {
         diorys: { 1: { some: 'first-diory-prop' }, 2: { some: 'second-diory-prop' } }
@@ -40,12 +50,20 @@ describe('<DioryGrid />', () => {
       expect(getComponent().children().find('Diory').first().prop('some')).toEqual('first-diory-prop')
     })
 
-    describe('when the connected diorys is an empty object', () => {
-      it('does not render diorys as children', () => {
-        diory = {}
-        expect(getComponent().children().find('Diory').length).toEqual(0)
-      })
+    it('does not render empty diorys as children', () => {
+      diory = {}
+      expect(getComponent().children().find('Diory').length).toEqual(0)
     })
+
+    describe('given display flex styles', () => {
+      beforeEach(() => {
+        diory.styles = { display: 'flex' }
+      });
+
+      it('renders Diory with display flex', () => {
+        expect(getComponent().props().styles.diory).toMatchObject({ display: 'flex' });
+      });
+    });
   })
 
   describe('given a onGridClick callback', () => {
