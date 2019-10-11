@@ -142,6 +142,9 @@ Go to http://localhost:9010
     - Added EventDiory that uses DioryGrid in display flex mode
     - Renamed styles to style and moved diory styles to root level
     - Added link property to Diory
+ - 1.4.0 (11.10.2019)
+    - Changed diory structure to render only existing subcomponents
+    - Separated internal styles from externals
 
 ## Author
 
@@ -149,6 +152,6 @@ Go to http://localhost:9010
 
 ## License
 
-Copyright © 2017 Olli-Pekka Pohjola
+Copyright © 2019 Olli-Pekka Pohjola
 
 Licensed under the MIT license.
