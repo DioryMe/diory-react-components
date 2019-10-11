@@ -9,7 +9,7 @@
     "build:watch": "babel src -w -d lib --ignore test.js",
     "lint": "eslint src --fix",
     "lint:watch": "esw -w src/**",
-    "test": "jest --coverage",
+    "test": "jest --watchAll --coverage",
     "test:watch": "jest --watchAll",
     "start": "webpack-dev-server --hot --inline --port 9010",
     "publish": "git push && npm publish"
@@ -64,15 +64,7 @@
     ],
     "parser": "babel-eslint",
     "rules": {
-      "react/jsx-curly-spacing": [
-        2,
-        "always",
-        {
-          "spacing": {
-            "objectLiterals": "never"
-          }
-        }
-      ],
+      "react/jsx-space-before-closing": 0,
       "operator-linebreak": [
         "error",
         "after"

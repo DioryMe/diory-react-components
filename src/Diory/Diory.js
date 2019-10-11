@@ -4,22 +4,20 @@ import { Text } from '../Text'
 import { Image } from '../Image'
 import { Link } from '../Link'
 
-const defaultStyle = {
-  position: 'relative'
-}
-
-const Diory = ({ onClick, children, ...diory }) => {
-  const { style = {} } = diory
-  const { image: imageStyle, text: textStyle, link: linkStyle, ...dioryStyle } = style
+const Diory = ({onClick, children, ...diory}) => {
+  const {text, image, link, style = {}} = diory
+  const {image: imageStyle, text: textStyle, link: linkStyle, ...dioryStyle} = style
   return (
     <div
-      style={{ ...defaultStyle, ...dioryStyle }}
-      onClick={ event => onClick && onClick({ diory, event }) }
+      style={dioryStyle}
+      onClick={event => onClick && onClick({diory, event})}
     >
-      <Image { ...diory } style={ imageStyle } />
-      <Text { ...diory } style={ textStyle } />
-      <Link { ...diory } style={ linkStyle } />
-      { children }
+      <div style={{position: 'relative', height: '100%'}}>
+        {image && <Image image={image} style={imageStyle}/>}
+        {text && <Text text={text} style={textStyle} />}
+        {link && <Link {...{link}} style={linkStyle}/>}
+        {children}
+      </div>
     </div>
   )
 }
@@ -35,7 +33,7 @@ Diory.propTypes = {
     link: PropTypes.object,
   }),
   onClick: PropTypes.func,
-  children: PropTypes.node
+  children: PropTypes.node,
 }
 
 export default Diory

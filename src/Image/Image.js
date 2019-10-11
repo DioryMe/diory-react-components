@@ -14,7 +14,7 @@ const defaultStyle = {
 
 const getBackgroundImage = image => ({ backgroundImage: 'url(' + image + ')' })
 
-export const Image = ({ image, style = {} }) => !image ? null : (
+export const Image = ({ image, style = {} }) => (
   <div style={{ ...defaultStyle, ...getBackgroundImage(image), ...style }} />
 )
 

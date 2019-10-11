@@ -9,7 +9,7 @@ describe('<Link />', () => {
 
   beforeEach(() => {
     props = {}
-    getComponent = () => shallow(<Link { ...props } />)
+    getComponent = () => shallow(<Link {...props} />)
   })
 
   describe('given a link as prop', () => {
@@ -26,14 +26,8 @@ describe('<Link />', () => {
     })
 
     it('sets style to the link', () => {
-      props.style = { some: 'style' }
-      expect(getComponent().props().style).toMatchObject({ some: 'style' })
-    })
-  })
-
-  describe('given no link as props', () => {
-    it('does not render the component', () => {
-      expect(getComponent().html()).toBeNull()
+      props.style = {some: 'style'}
+      expect(getComponent().props().style).toMatchObject({some: 'style'})
     })
   })
 })

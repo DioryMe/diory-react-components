@@ -19,11 +19,4 @@ describe('<Image />', () => {
       })
     })
   })
-
-  describe('given no image as props', () => {
-    it('does not render the component', () => {
-      component = shallow(<Image />)
-      expect(component.html()).toBeNull()
-    })
-  })
 })

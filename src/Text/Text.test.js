@@ -19,11 +19,4 @@ describe('<Text />', () => {
       })
     })
   })
-
-  describe('given no text as prop', () => {
-    it('does not render the component', () => {
-      component = shallow(<Text />)
-      expect(component.html()).toBeNull()
-    })
-  })
 })
